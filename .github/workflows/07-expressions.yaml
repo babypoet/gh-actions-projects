@@ -1,0 +1,31 @@
+name: 07 - Expressions
+run-name: 07 - Expressions | DEBUG - ${{ inputs.debug }}
+
+on:
+   push:
+   workflow_dispatch:
+    inputs:
+        debug:
+            type: boolean
+            default: false
+ 
+
+jobs: 
+  echo:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print start-up data
+        if: ${{ github.event }} == "push"
+        run: echo "I was triggered by a push event"
+
+    
+      - name: Print when triggered from main
+        if: ${{ github.event }} == "push"
+        run: echo "I was triggered from main"
+
+
+      - name: Greetings
+        run: echo "Hello, World"
+       
+ 
