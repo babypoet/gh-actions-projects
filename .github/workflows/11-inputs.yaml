@@ -10,8 +10,7 @@ on:
             target:
                 type: environment
                 required: true
-                description: "Which environment then workflow will target"
-
+                description: "Which environment the workflow will target"
             tag:
                 type: choice
                 options:
@@ -27,9 +26,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Build
-            run: echo "Building from tag ${{ inputs.tag}}"
+            run: echo "Building from tag ${{ inputs.tag }}"
     
-    deploy:
+    Deploy:
         runs-on: ubuntu-latest
         if: ${{ !inputs.dry-run }}
         environment: ${{ inputs.target}}
