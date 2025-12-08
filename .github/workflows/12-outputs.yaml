@@ -6,6 +6,7 @@ on:
         inputs:
          build-status:
             type: choice
+            description: "Build status output"
             options:
                 - success
                 - failure
