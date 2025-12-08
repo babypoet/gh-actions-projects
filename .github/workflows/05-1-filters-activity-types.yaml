@@ -1,7 +1,7 @@
 name: 05-1 filters and activity types
 
 on:
-    pull_request:
+    workflow_dispatch:
         types: [opened, synchronize]
         branches: 
           - main
